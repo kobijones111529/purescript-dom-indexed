@@ -20,11 +20,12 @@ import Data.MediaType (MediaType)
 import Web.Clipboard.ClipboardEvent (ClipboardEvent)
 import Web.Event.Event (Event)
 import Web.HTML.Event.DragEvent (DragEvent)
+import Web.PointerEvent (PointerEvent)
 import Web.TouchEvent (TouchEvent)
 import Web.UIEvent.FocusEvent (FocusEvent)
+import Web.UIEvent.InputEvent (InputEvent)
 import Web.UIEvent.KeyboardEvent (KeyboardEvent)
 import Web.UIEvent.MouseEvent (MouseEvent)
-import Web.PointerEvent (PointerEvent)
 import Web.UIEvent.WheelEvent (WheelEvent)
 
 type CSSPixel = Int
@@ -47,7 +48,8 @@ type GlobalAttributes r =
 
 type GlobalEvents r =
   ( onContextMenu :: Event
-  , onInput :: Event
+  , onInput :: InputEvent
+  , onBeforeInput :: InputEvent
   | r
   )
 
